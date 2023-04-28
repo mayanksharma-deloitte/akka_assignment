@@ -12,6 +12,9 @@ import scala.concurrent.{Await, ExecutionContext, Future}
 
 object Main {
   def main(args: Array[String]): Unit = {
+
+    //reading the hardcoded values from the conf file
+
     val config = ConfigFactory.load()
     val categoryFilter = config.getString("categoryFilter")
     val categorySinkFile = config.getString("categorySinkFile")
@@ -30,17 +33,13 @@ object Main {
 
 
 
-
-
-
-
-
+// can run various check points from here
 
     val input = scala.io.StdIn.readInt()
     val result = input match {
       case 1 => processCsvFile1(inputFilePath)
       case 2 => readCsvFile(inputFilePath)
-      case 3 =>
+      //case 3 =>
       case 4 =>
         val masterActor: ActorRef = system.actorOf(Props[MasterActor2], name = "masterActor")
         val futureResults: Future[Unit] = processCsv(inputFilePath,masterActor)
