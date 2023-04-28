@@ -26,6 +26,7 @@ case class ProcessRecord(record: Array[String])
 
 
 
+
 class MasterActor extends Actor {
   def receive = {
     case ProcessRecord(record) => {
