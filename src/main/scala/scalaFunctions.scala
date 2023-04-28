@@ -121,31 +121,6 @@ object scalaFunctions {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // 4
 
   class ChildActor1 extends Actor {
@@ -200,23 +175,6 @@ object scalaFunctions {
 
     Future.sequence(futures).map(_ => ())
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   // 5)
